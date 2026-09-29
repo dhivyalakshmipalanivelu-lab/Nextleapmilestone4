@@ -4,24 +4,20 @@ from __future__ import annotations
 
 import sys
 
-from mf_faq.config import CHROMA_PATH, DISTANCE_THRESHOLD, EMBEDDING_MODEL, TOP_K
+from mf_faq.config import CHROMA_PATH, DISTANCE_THRESHOLD, TOP_K
 from mf_faq.store import COLLECTION_NAME
 
 MISSING_COLLECTION = "Chroma collection is missing. Run python scripts/ingest.py"
 
-_model = None
 _client = None
 _client_path: str | None = None
 
 
 def _embedder():
-    """Load MiniLM once per process. Later questions reuse it."""
-    global _model
-    if _model is None:
-        from sentence_transformers import SentenceTransformer
+    """Load the ONNX MiniLM once per process. Later questions reuse it."""
+    from mf_faq.embed import embed_texts
 
-        _model = SentenceTransformer(EMBEDDING_MODEL)
-    return _model
+    return embed_texts
 
 
 def _chroma():
@@ -46,9 +42,9 @@ def retrieve(question: str) -> dict:
     if COLLECTION_NAME not in names:
         raise RuntimeError(MISSING_COLLECTION)
 
-    vector = _embedder().encode(question, show_progress_bar=False)
+    vector = _embedder()([question])[0]
     result = client.get_collection(COLLECTION_NAME).query(
-        query_embeddings=[vector.tolist()],
+        query_embeddings=[vector],
         n_results=TOP_K,
         include=["documents", "metadatas", "distances"],
     )

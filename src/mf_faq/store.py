@@ -15,11 +15,10 @@ def store_chunks(chunks: list[dict]) -> int:
     if not chunks:
         raise RuntimeError("No chunks to store. Load and chunk documents before embedding.")
 
-    from sentence_transformers import SentenceTransformer
+    from mf_faq.embed import embed_texts
     import chromadb
 
-    model = SentenceTransformer(EMBEDDING_MODEL)
-    vectors = model.encode([chunk["text"] for chunk in chunks], show_progress_bar=False)
+    vectors = embed_texts([chunk["text"] for chunk in chunks])
     if len(vectors) == 0 or len(vectors[0]) != VECTOR_DIMENSION:
         raise RuntimeError(
             f"{EMBEDDING_MODEL} must produce {VECTOR_DIMENSION}-dimension vectors."
@@ -36,7 +35,7 @@ def store_chunks(chunks: list[dict]) -> int:
         ids=[f"chunk-{index:04d}" for index in range(len(chunks))],
         documents=[chunk["text"] for chunk in chunks],
         metadatas=[_metadata(chunk) for chunk in chunks],
-        embeddings=[vector.tolist() for vector in vectors],
+        embeddings=vectors,
     )
 
     stored = collection.count()

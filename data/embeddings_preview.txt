@@ -1,4 +1,4 @@
-model: sentence-transformers/all-MiniLM-L6-v2
+model: onnx/all-MiniLM-L6-v2
 dimensions: 384
 preview: first 5 vectors, first 10 dimensions
 

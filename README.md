@@ -50,21 +50,39 @@ $env:PYTHONPATH = "src"
 python -m mf_faq.answer "What is the benchmark of HDFC Mid Cap Fund?"
 ```
 
+## Deploy on Streamlit Community Cloud
+
+Render runs out of memory when the build installs PyTorch and rebuilds the index. Streamlit Community Cloud serves the app that is already in this repo. The index in `data/chroma` is committed, so the cloud app does not ingest.
+
+1. Open https://share.streamlit.io and create an app from this GitHub repo.
+2. Branch: `main`
+3. Main file path: `src/mf_faq/app.py`
+4. In the app settings, open Secrets and paste:
+
+```toml
+GROQ_API_KEY = "your-key"
+GROQ_MODEL = "llama-3.3-70b-versatile"
+```
+
+Do not put the key in the repository. After the app is live, ask a question there. It does not run `scripts/ingest.py`.
+
 ## Chat UI
 
 From this folder, with the virtualenv active:
 
 ```powershell
+streamlit run src/mf_faq/app.py
+```
+
+Open the local URL Streamlit prints. The page does not ingest or re-embed.
+
+The Stitch page is still available locally with FastAPI:
+
+```powershell
 uvicorn mf_faq.web:app --app-dir src --host 0.0.0.0 --port 8000
 ```
 
-Open http://127.0.0.1:8000. The page does not ingest or re-embed. If the vector store is missing, the reply shows `python scripts/ingest.py`.
-
-On Render, the start command is:
-
-```bash
-uvicorn mf_faq.web:app --app-dir src --host 0.0.0.0 --port $PORT
-```
+Open http://127.0.0.1:8000.
 
 ## Chunking
 
@@ -95,6 +113,6 @@ Questions are embedded with the same MiniLM model and matched to the persisted C
 - Facts can go stale when HDFC Mutual Fund updates a PDF after the last ingestion. `Last updated from sources` is the date of that ingestion, not a live crawl.
 - PDF extraction can miss text that sits inside an image.
 - This is a class demo. It is not a substitute for the scheme information document or for advice from a registered advisor.
-- `data/chunks.txt` is the readable chunk dump. `data/chroma` holds the same chunks as vectors and is created by ingest, not committed.
+- `data/chunks.txt` is the readable chunk dump. `data/chroma` is the same chunks as vectors and is committed so Streamlit Community Cloud can answer without rebuilding the index.
 
 See also `docs/PRD.md` section 14, `docs/sample_qa.md`, and `docs/disclaimer.md`.
