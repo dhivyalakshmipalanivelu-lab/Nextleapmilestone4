@@ -1,0 +1,53 @@
+Q1. What is the benchmark of HDFC Mid Cap Fund?
+The HDFC Mid Cap Fund is benchmarked against the NIFTY MIDCAP 150 (TRI). Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Mid%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf
+Last updated from sources: 2026-09-29
+Retrieved chunks:
+1. HDFC Mid Cap Fund | 0.372 | HDFC Trustee Company Limited
+2. HDFC Mid Cap Fund | 0.417 | 20.  HDFC Technology Fund
+3. HDFC Flexi Cap Fund | 0.445 | 19
+4. HDFC Large Cap Fund | 0.463 | 22.  HDFC Value Fund
+5. HDFC Flexi Cap Fund | 0.469 | 18.  HDFC Pharma and Healthcare Fund
+6. HDFC Mid Cap Fund | 0.475 | by Mr. Chirag Setalvad since June 25, 2007. Returns as on May 29, 2026.
+
+Q2. What is the exit load of HDFC Large Cap Fund?
+The HDFC Large Cap Fund charges an exit load of 1.00 % on units redeemed or switched out within 1 year of allotment, and no exit load if redeemed after 1 year.【 https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf
+Last updated from sources: 2026-09-29
+Retrieved chunks:
+1. HDFC Large Cap Fund | 0.488 | Without Derivatives - 25.44%
+2. HDFC Large Cap Fund | 0.509 | price of the units, the mutual fund shall ensure that the repurchase price of an open ende
+3. HDFC Mid Cap Fund | 0.535 | that time subject to maximum limits as prescribed under the SEBI (MF) Regulations. While d
+4. HDFC Large Cap Fund | 0.551 | True to label large cap fund with large cap exposure of 93% and low portfolio turnover
+5. HDFC Large Cap Fund | 0.607 |  A minimum of 80% of the funds are invested in large cap stocks.
+6. HDFC Flexi Cap Fund | 0.609 | price of the units, the mutual fund shall ensure that the repurchase price of an open ende
+
+Q3. What is the minimum SIP amount for HDFC Flexi Cap Fund?
+The HDFC Flexi Cap Fund allows a SIP to be started with a minimum amount of Rs 100 (and any amount thereafter). Source: https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf
+Last updated from sources: 2026-09-29
+Retrieved chunks:
+1. HDFC Flexi Cap Fund | 0.502 | enhance the flexibility of the investor to invest higher amounts
+2. HDFC Flexi Cap Fund | 0.545 | only and should not be construed as a promise on minimum returns and safeguard of capital.
+3. HDFC Large Cap Fund | 0.574 | HDFC
+4. HDFC Flexi Cap Fund | 0.586 | and efficient functioning of the Scheme.
+5. HDFC Large Cap Fund | 0.621 | enhance the flexibility of the investor to invest higher amounts
+6. HDFC Mid Cap Fund | 0.630 | enhance the flexibility of the investor to invest higher amounts
+
+Q4. What is the lock-in period for HDFC ELSS Tax Saver?
+The HDFC ELSS Tax Saver scheme has a statutory lock‑in period of 3 years. Source: https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20ELSS%20Tax%20Saver%20dated%20November%2021%2C%202025_0.pdf
+Last updated from sources: 2026-09-29
+Retrieved chunks:
+1. HDFC ELSS Tax Saver | 0.553 | ● In respect of valid applications received upto 3.00 p.m. and where the funds for the ent
+2. HDFC ELSS Tax Saver | 0.593 | Banks / Exchanges et c), it may happen that the investor's account is
+3. HDFC ELSS Tax Saver | 0.612 | 1
+4. HDFC ELSS Tax Saver | 0.621 | lock-in / lock-in period stated under Scheme Information Document as on the date of tender
+5. HDFC ELSS Tax Saver | 0.690 | markets in general.
+6. HDFC ELSS Tax Saver | 0.704 | 1
+
+Q5. Should I buy HDFC Large Cap Fund?
+I don't give investment advice. I can only quote facts that appear in the official HDFC documents loaded for this demo. https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Large%20Cap%20Fund_August%2026.pdf
+Retrieved chunks:
+(none)
+
+Q6. What is the expense ratio of a gold ETF?
+I don't know. That is outside the HDFC Large Cap, Flexi Cap, Mid Cap, and ELSS documents I have.
+Retrieved chunks:
+(none)
