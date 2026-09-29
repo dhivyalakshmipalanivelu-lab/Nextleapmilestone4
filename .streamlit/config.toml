@@ -3,3 +3,9 @@ fileWatcherType = "none"
 
 [browser]
 gatherUsageStats = false
+[theme]
+primaryColor = "#00D09C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F4F6F8"
+textColor = "#1F2937"
+font = "sans serif"
