@@ -15,6 +15,56 @@ Loaded schemes:
 
 HDFC Small Cap and every other fund are outside this demo.
 
+## Disclaimer
+
+**Facts-only. No investment advice.** This assistant reports facts found in official HDFC Mutual Fund documents. It does not recommend funds, compare returns, or say whether to buy or sell. Do not enter PAN, Aadhaar, account numbers, OTPs, emails or phone numbers. For decisions about your money, consult a SEBI-registered adviser.
+
+## Sources
+
+All 15 sources are official HDFC Mutual Fund PDFs. The same list is in `data/sources.md`.
+
+**HDFC Large Cap Fund**
+
+1. [SID](https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf)
+2. [Fund Facts, Aug 2026](https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Large%20Cap%20Fund_August%2026.pdf)
+3. [KIM](https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf)
+4. [Leaflet](https://files.hdfcfund.com/s3fs-public/Others/2026-02/HDFC%20Large%20Cap%20Fund%20Leaflet%20%28Jan%202026%29.pdf)
+
+**HDFC Flexi Cap Fund**
+
+5. [SID](https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf)
+6. [Fund Facts, Aug 2026](https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Flexi%20Cap%20Fund_August%2026.pdf)
+7. [KIM](https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf)
+8. [Leaflet](https://files.hdfcfund.com/s3fs-public/Others/2026-06/Leaflet-HDFC%20Flexi%20Cap%20Fund-May%202026.pdf)
+
+**HDFC Mid Cap Fund**
+
+9. [SID](https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Mid%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf)
+10. [Fund Facts, Aug 2026](https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Mid-Cap%20Fund_August%2026.pdf)
+11. [KIM](https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Mid%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf)
+12. [Leaflet](https://files.hdfcfund.com/s3fs-public/Others/2026-07/HDFC%20Mid%20Cap%20Fund%20Leaflet%20%28As%20of%20May%2029%2C%202026%29.pdf)
+
+**HDFC ELSS Tax Saver**
+
+13. [SID](https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20ELSS%20Tax%20Saver%20dated%20November%2021%2C%202025.pdf)
+14. [Fund Facts, Jul 2026](https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf)
+15. [KIM](https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20ELSS%20Tax%20Saver%20dated%20November%2021%2C%202025_0.pdf)
+
+## Sample Q&A
+
+**Q: What is the lock-in period for HDFC ELSS Tax Saver?**
+A: The HDFC ELSS Tax Saver scheme has a statutory lock‑in period of 3 years. 
+Source: https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf 
+Last updated from sources: 2026-09-29
+
+**Q: What is the minimum SIP for HDFC Flexi Cap Fund?**
+A: The minimum SIP for HDFC Flexi Cap Fund is Rs. 100 per installment.
+Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf
+Last updated from sources: 2026-09-29
+
+**Q: Should I buy HDFC Mid Cap Fund?**
+A:I don't give investment advice. I can only quote facts that appear in the official HDFC documents loaded for this demo. 
+
 ## Setup
 
 From this folder, in PowerShell:
