@@ -52,18 +52,42 @@ All 15 sources are official HDFC Mutual Fund PDFs. The same list is in `data/sou
 
 ## Sample Q&A
 
-**Q: What is the lock-in period for HDFC ELSS Tax Saver?**
-A: The HDFC ELSS Tax Saver scheme has a statutory lock‑in period of 3 years. 
-Source: https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf 
+Facts-only. No investment advice.
+
+**Q1: What is the expense ratio of HDFC Large Cap Fund Direct?**
+A:The audited expense ratio for the HDFC Large Cap Fund Direct Plan is 1.01 % per annum. This figure is the actual expense ratio inclusive of GST on management fees and additional TER for the financial year ended March 31, 2025.
+Source: https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf 
 Last updated from sources: 2026-09-29
 
-**Q: What is the minimum SIP for HDFC Flexi Cap Fund?**
-A: The minimum SIP for HDFC Flexi Cap Fund is Rs. 100 per installment.
-Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf
+**Q2: What is the exit load of HDFC Mid Cap Fund?**
+A:The HDFC Mid Cap Fund charges an exit load of 1.00 % on units redeemed or switched out within one year from the date of allotment; no exit load is applied after one year.
+Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Mid%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf 
 Last updated from sources: 2026-09-29
 
-**Q: Should I buy HDFC Mid Cap Fund?**
-A:I don't give investment advice. I can only quote facts that appear in the official HDFC documents loaded for this demo. 
+**Q3: What is the minimum SIP for HDFC Flexi Cap Fund?**
+A:The minimum SIP for HDFC Flexi Cap Fund is Rs. 100. This is the minimum application amount for systematic investments in the scheme.
+Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Flexi%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf 
+Last updated from sources: 2026-09-29
+
+
+**Q4: What is the lock-in period for HDFC ELSS Tax Saver?**
+A:The HDFC ELSS Tax Saver scheme has a statutory lock‑in period of 3 years. 
+Source:https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf 
+Last updated from sources: 2026-09-29
+
+
+**Q5: What is the benchmark of HDFC Mid Cap Fund?**
+A:The HDFC Mid Cap Fund is benchmarked against the NIFTY MIDCAP 150 (TRI) index.
+ Source: https://files.hdfcfund.com/s3fs-public/SID/2025-11/SID%20-%20HDFC%20Mid%20Cap%20Fund%20dated%20November%2021%2C%202025_1.pdf 
+ Last updated from sources: 2026-09-29
+
+**Q6: Should I buy HDFC Flexi Cap Fund?**
+A:I don't give investment advice. I can only quote facts that appear in the official HDFC documents loaded for this demo
+Educational link:https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Large%20Cap%20Fund_August%2026.pdf
+
+**Q7: Which HDFC fund gave the best returns?**
+A:I don't calculate or compare returns. 
+Source:See the official fund facts: https://files.hdfcfund.com/s3fs-public/Others/2026-09/Fund%20Facts%20-%20HDFC%20Mid-Cap%20Fund_August%2026.pdf
 
 ## Setup
 
