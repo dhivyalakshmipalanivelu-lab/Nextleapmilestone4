@@ -1,43 +1,60 @@
-"""Streamlit chat for the facts-only FAQ. Does not load or ingest documents."""
+                st.caption(f"distance {distance:.3f}")
+            preview = (chunk.get("text") or "").strip()
+            if preview:
+                st.text(preview[:400])
 
-from __future__ import annotations
 
-import html
-import sys
-from pathlib import Path
+def main() -> None:
+    st.set_page_config(page_title="HDFC Fund FAQ", layout="centered")
+    _ensure_state()
 
-SRC = Path(__file__).resolve().parents[1]
-if str(SRC) not in sys.path:
-    sys.path.insert(0, str(SRC))
+    st.title("HDFC Fund FAQ")
+    st.write(
+        "This assistant answers factual questions about HDFC Large Cap, Flexi Cap, "
+        "Mid Cap, and ELSS Tax Saver from the official documents already loaded."
+    )
+    st.markdown(f"**{DISCLAIMER}**")
 
-import streamlit as st
+    header = st.columns([4, 1])
+    with header[1]:
+        if st.button("Clear chat", use_container_width=True):
+            st.session_state.messages = []
+            st.session_state.memory = Memory()
+            st.rerun()
 
-from mf_faq.answer import answer_question
-from mf_faq.memory import Memory
+    st.write("Try an example:")
+    columns = st.columns(3)
+    for column, example in zip(columns, EXAMPLES):
+        with column:
+            if st.button(example, use_container_width=True):
+                st.session_state.pending = example
 
-DISCLAIMER = "Facts-only. No investment advice."
-EXAMPLES = (
-    "What is the expense ratio of HDFC Large Cap Fund Direct?",
-    "What is the lock-in period for HDFC ELSS Tax Saver?",
-    "What is the minimum SIP for HDFC Flexi Cap Fund?",
-)
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            resolved = message.get("resolved")
+            if message["role"] == "assistant" and resolved and resolved != _previous_user(message):
+                st.caption(f"Understood as: {resolved}")
+            st.markdown(message["content"])
+            if message["role"] == "assistant":
+                _sources(message.get("chunks") or [])
 
-CSS = """
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    typed = st.chat_input("Ask a factual question")
+    pending = st.session_state.pop("pending", None)
+    question = pending or typed
+    if question:
+        _ask(question)
+        st.rerun()
 
-html, body, [class*="css"], .stMarkdown, button, input, textarea {
-    font-family: 'Inter', sans-serif !important;
-}
-#MainMenu, footer, header[data-testid="stHeader"] { visibility: hidden; }
-.block-container { max-width: 760px; padding-top: 1.5rem; padding-bottom: 6rem; }
 
-.app-header { display: flex; align-items: center; gap: 12px; }
-.logo-mark {
-    width: 38px; height: 38px; border-radius: 12px; background: #00D09C;
-    color: #fff; font-weight: 700; font-size: 18px;
-    display: flex; align-items: center; justify-content: center;
-}
-.app-title { font-size: 20px; font-weight: 700; color: #1F2937; line-height: 1.2; }
-.app-tag {
-    display:
+def _previous_user(message: dict) -> str:
+    """The user text just before this assistant reply, used to show a rewrite."""
+    messages = st.session_state.messages
+    index = messages.index(message)
+    for earlier in reversed(messages[:index]):
+        if earlier["role"] == "user":
+            return earlier["content"]
+    return ""
+
+
+if __name__ == "__main__":
+    main()
