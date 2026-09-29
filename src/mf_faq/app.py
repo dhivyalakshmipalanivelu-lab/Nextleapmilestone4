@@ -44,9 +44,9 @@ def _ask(question: str) -> None:
         result = answer_question(question, st.session_state.memory)
     except RuntimeError as exc:
         result = {"text": str(exc), "chunks": [], "question": question}
-    except Exception:
+    except Exception as exc:
         result = {
-            "text": "The answer service failed. No answer was generated.",
+            "text": f"The answer service failed: {type(exc).__name__}: {exc}",
             "chunks": [],
             "question": question,
         }
