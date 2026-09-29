@@ -7,9 +7,10 @@ import re
 from mf_faq.config import CHUNK_OVERLAP, CHUNK_SIZE, CHUNKS_PATH, RAW_DIR
 
 _FACT_HEADING = re.compile(
-    r"^(?:\d+\.\s*|[IVX]+\.\s*)?(?:Minimum Application|Minimum Additional|Minimum Redemption|Exit Load|Benchmark\b|Lock[- ]?in|Recurring Expenses|Actual expenses|Maximum Total Expense Ratio)",
+    r"^(?:\d+\.\s*|[IVX]+\.\s*)?(?:Minimum Application|Minimum Additional|Minimum Redemption|Exit Load|Benchmark\b|The benchmark of the scheme is|Lock[- ]?in|Recurring Expenses|Actual expenses|Maximum Total Expense Ratio)",
     re.IGNORECASE,
 )
+_LOCK_IN_LINE = re.compile(r"statutory lock[- ]?in", re.IGNORECASE)
 
 
 def chunk_all() -> list[dict]:
@@ -51,6 +52,12 @@ def pack_units(units: list[str], size: int, overlap: int) -> list[str]:
         return len("\n".join(lines)) if lines else 0
 
     for unit in _pieces(units, size):
+        if _LOCK_IN_LINE.search(unit):
+            if current:
+                chunks.append("\n".join(current))
+            chunks.append(unit)
+            current = []
+            continue
         heading = bool(_FACT_HEADING.match(unit))
         if current and (heading or length(current) + 1 + len(unit) > size):
             chunks.append("\n".join(current))

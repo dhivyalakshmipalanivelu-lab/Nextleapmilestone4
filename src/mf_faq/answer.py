@@ -17,7 +17,7 @@ def answer_question(question: str, memory: Memory | None = None) -> dict:
     """Return the reply text and the chunks that were retrieved, if any."""
     pre = decide(question)
     if pre is not None and pre.skip_retrieval and pre.kind == "pii":
-        return {"text": pre.message, "chunks": [], "question": question}
+        return {"text": pre.message, "chunks": [], "question": question, "kind": pre.kind}
 
     rewritten = question
     if memory is not None and memory.messages:
@@ -28,7 +28,7 @@ def answer_question(question: str, memory: Memory | None = None) -> dict:
         if memory is not None:
             memory.add("user", rewritten)
             memory.add("assistant", pre.message)
-        return {"text": pre.message, "chunks": [], "question": rewritten}
+        return {"text": pre.message, "chunks": [], "question": rewritten, "kind": pre.kind}
 
     found = retrieve(rewritten)
     verdict = decide(rewritten, found)
@@ -39,7 +39,7 @@ def answer_question(question: str, memory: Memory | None = None) -> dict:
         if memory is not None:
             memory.add("user", rewritten)
             memory.add("assistant", text)
-        return {"text": text, "chunks": chunks, "question": rewritten}
+        return {"text": text, "chunks": chunks, "question": rewritten, "kind": verdict.kind if verdict else "unknown"}
 
     if not GROQ_API_KEY:
         raise RuntimeError("set GROQ_API_KEY in .env")
@@ -48,7 +48,7 @@ def answer_question(question: str, memory: Memory | None = None) -> dict:
     if memory is not None:
         memory.add("user", rewritten)
         memory.add("assistant", text)
-    return {"text": text, "chunks": chunks, "question": rewritten}
+    return {"text": text, "chunks": chunks, "question": rewritten, "kind": "ok"}
 
 
 def _ask_groq(question: str, chunks: list[dict]) -> str:
@@ -65,6 +65,9 @@ def _ask_groq(question: str, chunks: list[dict]) -> str:
         "Audited actual expenses for the Regular Plan and the Direct Plan are the expense ratio. "
         "Quote both percentages when they appear. "
         "Do not say the percentage is missing when those audited figures are in the chunks. "
+        "A statutory lock-in of 3 years is the lock-in period when a chunk states that for the named scheme. "
+        "When a chunk says the benchmark of the scheme is a named index, quote that index. "
+        "Do not answer with a benchmark from a comparison table for a different scheme. "
         "Write at most 3 sentences. "
         "Include exactly one source URL, and it must be copied from a chunk. "
         "Do not give investment advice. Do not calculate or compare returns. "
